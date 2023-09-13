@@ -45,16 +45,16 @@ Follow these steps to set up and run the application:
 
 The following API endpoints are available:
 
-- `POST /api/users`: Create a new user.
-- `GET /api/users/:user_id`: Retrieve a user by ID.
-- `PUT /api/users/:user_id`: Update a user's name by ID.
-- `DELETE /api/users/:user_id`: Delete a user by ID.
+- `POST /api`: Create a new user.
+- `GET /api/user_id`: Retrieve a user by ID.
+- `PUT /api/user_id`: Update a user's name by ID.
+- `DELETE /api/user_id`: Delete a user by ID.
 
 ## Example Usage
 
 ### Create a User
 
-Send a POST request to `/api/users` with a JSON body containing the user data:
+Send a POST request to `/api` with a JSON body containing the user data:
 
 ```json
 {
@@ -64,11 +64,11 @@ Send a POST request to `/api/users` with a JSON body containing the user data:
 
 ### Retrieve a User
 
-Send a GET request to `/api/users/:user_id` to retrieve a user by their ID.
+Send a GET request to `/api/user_id` to retrieve a user by their ID.
 
 ### Update a User
 
-Send a PUT request to `/api/users/:user_id` with a JSON body containing the updated user data:
+Send a PUT request to `/api/user_id` with a JSON body containing the updated user data:
 
 ```json
 {
@@ -78,7 +78,7 @@ Send a PUT request to `/api/users/:user_id` with a JSON body containing the upda
 
 ### Delete a User
 
-Send a DELETE request to `/api/users/:user_id` to delete a user by their ID.
+Send a DELETE request to `/api/user_id` to delete a user by their ID.
 
 ## Error Handling
 
@@ -88,9 +88,6 @@ The application includes error handling middleware to handle various error scena
 
 If you access an undefined route, you will receive a "Not Found" response.
 
-## Contributing
-
-Feel free to contribute to this project by submitting issues or pull requests.
 
 ## License
 
