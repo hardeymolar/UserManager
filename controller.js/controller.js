@@ -3,6 +3,15 @@ const { StatusCodes } = require("http-status-codes");
 const { BadRequestError } = require('../errors');
 const mongoose = require("mongoose");
 
+
+const home = async (req,res,next)=>{
+    try {
+        res.status(StatusCodes.OK).json(`welcome to user management rest api`);
+    } catch (error) {
+        next(error);
+    }
+}
+
 const createUser = async (req, res, next) => {
     try {
         const newUser = await user.create(req.body);
@@ -75,4 +84,4 @@ const deleteUser = async (req, res, next) => {
     }
 };
 
-module.exports = { createUser, getUser, updateUser, deleteUser };
+module.exports = { createUser, getUser, updateUser, deleteUser,home };
