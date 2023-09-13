@@ -24,7 +24,7 @@ const getUser = async (req, res, next) => {
         }
         const foundUser = await user.findOne({ _id: user_id });
         if (!foundUser) {
-            return res.status(StatusCodes.NOT_FOUND).json({ message: "User not found" });
+            return res.status(StatusCodes.NOT_FOUND).json({ message: `User with id ${user_id} not found` });
         }
         res.status(StatusCodes.OK).json(foundUser);
     } catch (error) {
@@ -47,7 +47,7 @@ const updateUser = async (req, res, next) => {
         }
         const updatedUser = await user.findOneAndUpdate({ _id: user_id }, { name: req.body.name }, { new: true, runValidators: true });
         if (!updatedUser) {
-            return res.status(StatusCodes.NOT_FOUND).json({ message: "User not found" });
+            return res.status(StatusCodes.NOT_FOUND).json({ message: `User with id ${user_id} not found` });
         }
         res.status(StatusCodes.OK).json(updatedUser);
     } catch (error) {
